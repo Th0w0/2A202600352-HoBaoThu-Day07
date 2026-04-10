@@ -68,59 +68,17 @@ def demo_llm(prompt: str) -> str:
     preview = prompt[:400].replace("\n", " ")
     return f"[DEMO LLM] Generated answer from prompt preview: {preview}..."
 
-def google_llm(prompt: str) -> str:
-    """A real LLM call using Google Gemini (new google.genai SDK)."""
-    import os
-    try:
-        from google import genai
-    except ImportError:
-        print("Thư viện 'google-genai' chưa được cài đặt. Đang dùng demo_llm...")
-        return demo_llm(prompt)
-
-    api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        print("Chưa tìm thấy GOOGLE_API_KEY trong .env. Đang dùng demo_llm...")
-        return demo_llm(prompt)
-
-    client = genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model="gemini-2.5-flash-preview-04-17",
-        contents=prompt,
-    )
-    return response.text
-
-
-def make_gemini_embedder():
-    """Return a callable that embeds text using Gemini text-embedding API."""
-    import os
-    try:
-        from google import genai
-    except ImportError:
-        return None
-
-    api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        return None
-
-    client = genai.Client(api_key=api_key)
-
-    def _embed(text: str) -> list[float]:
-        result = client.models.embed_content(
-            model="text-embedding-004",
-            contents=text,
-        )
-        return result.embeddings[0].values
-
-    _embed._backend_name = "gemini text-embedding-004"
-    return _embed
-
 
 def run_manual_demo(question: str | None = None, sample_files: list[str] | None = None) -> int:
     files = sample_files or SAMPLE_FILES
     query = question or "Summarize the key information from the loaded files."
 
     print("=== Manual File Test ===")
- 
+    print("Accepted file types: .md, .txt")
+    print("Input file list:")
+    for file_path in files:
+        print(f"  - {file_path}")
+
     docs = load_documents_from_files(files)
     if not docs:
         print("\nNo valid input files were loaded.")
@@ -133,13 +91,8 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
         print(f"  - {doc.id}: {doc.metadata['source']}")
 
     load_dotenv(override=False)
-    provider = os.getenv(EMBEDDING_PROVIDER_ENV, "").strip().lower()
-
-    # Ưu tiên dùng Gemini embedding nếu có GOOGLE_API_KEY
-    gemini_embedder = make_gemini_embedder()
-    if gemini_embedder:
-        embedder = gemini_embedder
-    elif provider == "local":
+    provider = os.getenv(EMBEDDING_PROVIDER_ENV, "mock").strip().lower()
+    if provider == "local":
         try:
             embedder = LocalEmbedder(model_name=os.getenv("LOCAL_EMBEDDING_MODEL", LOCAL_EMBEDDING_MODEL))
         except Exception:
@@ -166,7 +119,7 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
         print(f"   content preview: {result['content'][:120].replace(chr(10), ' ')}...")
 
     print("\n=== KnowledgeBaseAgent Test ===")
-    agent = KnowledgeBaseAgent(store=store, llm_fn=google_llm)
+    agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
     print(f"Question: {query}")
     print("Agent answer:")
     print(agent.answer(query, top_k=3))
