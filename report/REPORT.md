@@ -105,8 +105,8 @@ Chạy `ChunkingStrategyComparator().compare()` trên 10 tài liệu:
 | Thành viên | Strategy | Retrieval Score (/10) | Điểm mạnh | Điểm yếu |
 |-----------|----------|----------------------|-----------|----------|
 | Tôi | Recursive | 9.0 | Chunk gọn, trọn khối ý | Code phức tạp |
-| Bạn A | Fixed Size | 6.5 | Triển khai nhanh | Chặt đứt câu |
-| Bạn B | Sentence | 8.0 | Lấy full câu đúng ý | Chunk size không đều nhau |
+| Bạn Tuấn | Fixed Size | 6.5 | Triển khai nhanh | Chặt đứt câu |
+| Bạn Việt | Sentence | 8.0 | Lấy full câu đúng ý | Chunk size không đều nhau |
 
 **Strategy nào tốt nhất cho domain này? Tại sao?**
 > Recursive Strategy là tốt nhất. Do domain học thuật chứa rất nhiều câu văn và đoạn văn dài ngắn bất định. Recursive cho phép chunking linh hoạt với các đoạn xuống dòng, vừa giúp giới hạn độ dài chunk, vừa không chặt chém ngữ nghĩa ở giữa câu.
