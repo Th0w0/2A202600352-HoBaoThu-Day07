@@ -74,21 +74,9 @@ Chạy `ChunkingStrategyComparator().compare()` trên 10 tài liệu:
 
 | Tài liệu | Strategy | Chunk Count | Avg Length | Preserves Context? |
 |-----------|----------|-------------|------------|-------------------|
-| Randomized trial of folic acid supplementation and serum homocysteine levels | FixedSizeChunker (`fixed_size`) | 4 | ~421.0 | Không tốt (cắt ngang câu) |
-| Randomized trial of folic acid supplementation and serum homocysteine levels | SentenceChunker (`by_sentences`) | 5 | ~337.0 | Tốt (ngữ nghĩa trọn câu) |
-| Randomized trial of folic acid supplementation and serum homocysteine levels | RecursiveChunker (`recursive`) | 4 | ~400.0 | Rất tốt (theo đoạn/câu) |
-| Keratin-dependent regulation of Aire and gene expression in skin tumor keratinocytes | FixedSizeChunker | 3 | ~352.0 | Không tốt |
-| Keratin-dependent regulation of Aire and gene expression in skin tumor keratinocytes | SentenceChunker | 3 | ~352.0 | Tốt |
-| Keratin-dependent regulation of Aire and gene expression in skin tumor keratinocytes | RecursiveChunker | 3 | ~352.0 | Rất tốt |
-| ALDH1 is a marker of normal and malignant human mammary stem cells... | FixedSizeChunker | 3 | ~340.0 | Không tốt |
-| ALDH1 is a marker of normal and malignant human mammary stem cells... | SentenceChunker | 3 | ~340.0 | Tốt |
-| ALDH1 is a marker of normal and malignant human mammary stem cells... | RecursiveChunker | 3 | ~340.0 | Rất tốt |
-| Prevalent abnormal prion protein in human appendixes after bovine spongiform... | FixedSizeChunker | 4 | ~497.0 | Không tốt |
-| Prevalent abnormal prion protein in human appendixes after bovine spongiform... | SentenceChunker | 7 | ~284.0 | Tốt |
-| Prevalent abnormal prion protein in human appendixes after bovine spongiform... | RecursiveChunker | 5 | ~398.0 | Rất tốt |
-| New opportunities: the use of nanotechnologies to manipulate and track stem cells | FixedSizeChunker | 2 | ~320.0 | Không tốt |
-| New opportunities: the use of nanotechnologies to manipulate and track stem cells | SentenceChunker | 2 | ~320.0 | Tốt |
-| New opportunities: the use of nanotechnologies to manipulate and track stem cells | RecursiveChunker | 2 | ~320.0 | Rất tốt |
+| Randomized trial of folic acid supplementation and serum homocysteine levels | FixedSizeChunker (`fixed_size`) | 5 | 374.00 | Không tốt (cắt ngang câu) |
+| Randomized trial of folic acid supplementation and serum homocysteine levels | SentenceChunker (`by_sentences`) | 4 | 446.50 | Tốt (ngữ nghĩa trọn câu) |
+| Randomized trial of folic acid supplementation and serum homocysteine levels | RecursiveChunker (`recursive`) | 7 | 255.71 | Rất tốt (theo đoạn/câu) |
 
 ### Strategy Của Tôi
 
@@ -109,8 +97,8 @@ Chạy `ChunkingStrategyComparator().compare()` trên 10 tài liệu:
 
 | Tài liệu | Strategy | Chunk Count | Avg Length | Retrieval Quality? |
 |-----------|----------|-------------|------------|--------------------|
-| Randomized trial of folic acid supplementation and serum homocysteine levels | best baseline (Sentence) | 5 | ~337 | Khá tốt |
-| Randomized trial of folic acid supplementation and serum homocysteine levels | **của tôi** (Recursive) | 4 | ~400 | Tốt, đầy đủ context hơn |
+| Randomized trial of folic acid supplementation and serum homocysteine levels | best baseline (Sentence) | 4 | 446.50 | Khá tốt |
+| Randomized trial of folic acid supplementation and serum homocysteine levels | **của tôi** (Recursive) | 7 | 255.71 | Tốt, đầy đủ context hơn |
 
 ### So Sánh Với Thành Viên Khác
 
@@ -197,13 +185,13 @@ Chạy 5 benchmark queries của nhóm trên implementation cá nhân của bạ
 
 | # | Query | Top-1 Retrieved Chunk (tóm tắt) | Score | Relevant? | Agent Answer (tóm tắt) |
 |---|-------|--------------------------------|-------|-----------|------------------------|
-| 1 | B12 deficiency increases homocysteine... | ... vitamin B12 lowered serum homocysteine... | 0.82 | Yes | Đúng. Dữ liệu chứng minh nồng độ giảm đi khi bổ sung. |
-| 2 | AIRE expression in skin tumors... | ... keratinocyte turnover controls Aire gene regulation... | 0.86 | Yes | Đúng. Có sự biểu hiện của AIRE ở khối u da. |
-| 3 | ALDH1 breast cancer outcomes... | ... ALDH1 serves as a predictor of poor clinical outcome...| 0.89 | Yes | Sai. Nó biểu thị kết quả lâm sàng xấu, không phải tốt hơn. |
-| 4 | 1/2000 in UK abnormal PrP... | ... survey shows prevalent abnormal prion protein in UK... | 0.92 | Yes | Đúng. Tỷ lệ khảo sát cho thấy PrP bất thường phổ biến. |
-| 5 | 0-dimensional biomaterials inductive... | ... applications of nanotechnology to track stem cell... | 0.81 | Yes | Đúng. Các vật liệu cấp vi mô (nano) có tác động lên tế bào. |
+| 1 | B12 deficiency increases homocysteine... | ... prevalence of infection with abnormal PrP... | 0.328 | No | [MockEmbedder - Trả lời sai do nhiễu] |
+| 2 | AIRE expression in skin tumors... | ... reduction in median erythrocyte count... | 0.216 | No | [MockEmbedder - Trả lời sai do nhiễu] |
+| 3 | ALDH1 breast cancer outcomes... | ... prevalence rates and numbers of underweight kids...| 0.320 | No | [MockEmbedder - Trả lời sai do nhiễu] |
+| 4 | 1/2000 in UK abnormal PrP... | ... homocysteine reduction (placebo adjusted)... | 0.366 | No | [MockEmbedder - Trả lời sai do nhiễu] |
+| 5 | 0-dimensional biomaterials inductive... | ... expression of ALDH1 detected by immunostaining... | 0.240 | No | [MockEmbedder - Trả lời sai do nhiễu] |
 
-**Bao nhiêu queries trả về chunk relevant trong top-3?** 5 / 5
+**Bao nhiêu queries trả về chunk relevant trong top-3?** 0 / 5 *(Lý do: Hiện tại đang fallback về Mock Embedder (hàm băm chuỗi SHA-256) do thiếu cài đặt API Key Google/OpenAI, khiến việc đối sánh góc cosine giữa vector trở thành nhiễu hoàn toàn, không có ý nghĩa ngữ nghĩa học. Nếu cấu hình API Key thực, kết quả sẽ đúng ngữ nghĩa).*
 
 ---
 

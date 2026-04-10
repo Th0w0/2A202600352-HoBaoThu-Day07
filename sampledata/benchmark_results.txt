@@ -1,0 +1,230 @@
+             LAB 7 FULL BENCHMARK REPORT            
+
+PART 1: CHUNKING STRATEGY COMPARISON
+----------------------------------------------------
+Comparing strategies on: 11705328_Randomized trial of folic acid supplementation and serum homocysteine levels.
+Strategy: fixed_size
+  - Chunk Count: 5
+  - Avg Length:  374.00 characters
+
+Strategy: by_sentences
+  - Chunk Count: 4
+  - Avg Length:  446.50 characters
+
+Strategy: recursive
+  - Chunk Count: 7
+  - Avg Length:  255.71 characters
+
+
+PART 2: RETRIEVAL BENCHMARK QUERIES
+----------------------------------------------------
+
+QUERY 1: 0-dimensional biomaterials show inductive properties.
+....................
+  [RESULT 1]
+  Score:    0.2404
+  Source:   45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome..txt
+  Metadata: {'source': '45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome..txt', 'doc_id': '45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.', 'chunk_index': 3}
+  Content Preview: In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts.
+
+  [RESULT 2]
+  Score:    0.2348
+  Source:   18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt
+  Metadata: {'source': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt', 'doc_id': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia', 'chunk_index': 4}
+  Content Preview: We observed a reduction in median erythrocyte count of approximately 1.5 x 10(12)/l in all children with acute falciparum malaria relative to values in community children (p < 0.001). We developed a simple mathematical model of the linear relationship between Hb concentration and erythrocyte count.
+
+  [RESULT 3]
+  Score:    0.2250
+  Source:   31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells..txt
+  Metadata: {'source': '31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells..txt', 'doc_id': '31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells.', 'chunk_index': 1}
+  Content Preview: Nanotechnologies are emerging platforms that could be useful in measuring, understanding, and manipulating stem cells.
+
+
+QUERY 2: 1,000 genomes project enables mapping of genetic sequence variation consisting of rare variants with larger penetrance effects than common variants.
+....................
+  [RESULT 1]
+  Score:    0.2661
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 6}
+  Content Preview: In developing regions, the prevalence was forecasted to decline from 30.2% to 19.3%, a change of -36% (95% CI, -45% to -26%). In Africa, the prevalence of underweight was forecasted to increase from 24.0% to 26.8%, a change of 12% (95% CI, 8%-16%). In Asia, the prevalence was estimated to decrease f...
+
+  [RESULT 2]
+  Score:    0.2085
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 1}
+  Content Preview: CONTEXT One key target of the United Nations Millennium Development goals is to reduce the prevalence of underweight among children younger than 5 years by half between 1990 and 2015. OBJECTIVE To estimate trends in childhood underweight by geographic regions of the world.
+
+  [RESULT 3]
+  Score:    0.2050
+  Source:   5152028_Folic acid improves endothelial function in coronary artery disease via mechanisms largely independent of homocysteine l.txt
+  Metadata: {'source': '5152028_Folic acid improves endothelial function in coronary artery disease via mechanisms largely independent of homocysteine l.txt', 'doc_id': '5152028_Folic acid improves endothelial function in coronary artery disease via mechanisms largely independent of homocysteine l', 'chunk_index': 3}
+  Content Preview: METHODS AND RESULTS A randomized, placebo-controlled study of folic acid (5 mg/d) for 6 weeks was undertaken in 33 patients. Endothelial function, assessed by flow-mediated dilatation (FMD), was measured before, at 2 and 4 hours after the first dose of folic acid, and after 6 weeks of treatment. Pla...
+
+
+QUERY 3: 1/2000 in UK have abnormal PrP positivity.
+....................
+  [RESULT 1]
+  Score:    0.3662
+  Source:   11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt
+  Metadata: {'source': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt', 'doc_id': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels.', 'chunk_index': 3}
+  Content Preview: RESULTS Median serum homocysteine level decreased with increasing folic acid dosage, to a maximum at 0.8 mg of folic acid per day, when the homocysteine reduction (placebo adjusted) was 2.7 micromol/L (23%), similar to the known effect of folic acid dosages of 1 mg/d and above.
+
+  [RESULT 2]
+  Score:    0.3475
+  Source:   11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt
+  Metadata: {'source': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt', 'doc_id': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels.', 'chunk_index': 0}
+  Content Preview: DOC_ID: 11705328 TITLE: Randomized trial of folic acid supplementation and serum homocysteine levels.
+
+  [RESULT 3]
+  Score:    0.3115
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 0}
+  Content Preview: DOC_ID: 14717500 TITLE: Rare Variants Create Synthetic Genome-Wide Associations
+
+
+QUERY 4: 5% of perinatal mortality is due to low birth weight.
+....................
+  [RESULT 1]
+  Score:    0.2693
+  Source:   11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt
+  Metadata: {'source': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels..txt', 'doc_id': '11705328_Randomized trial of folic acid supplementation and serum homocysteine levels.', 'chunk_index': 1}
+  Content Preview: BACKGROUND Lowering serum homocysteine levels with folic acid is expected to reduce mortality from ischemic heart disease. Homocysteine reduction is known to be maximal at a folic acid dosage of 1 mg/d, but the effect of lower doses (relevant to food fortification) is unclear.
+
+  [RESULT 2]
+  Score:    0.2297
+  Source:   18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt
+  Metadata: {'source': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt', 'doc_id': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia', 'chunk_index': 5}
+  Content Preview: This model predicted that children homozygous for alpha(+)-thalassaemia lose less Hb than children of normal genotype for a reduction in erythrocyte count of >1.1 x 10(12)/l as a result of the reduced mean cell Hb in homozygous alpha(+)-thalassaemia.
+
+  [RESULT 3]
+  Score:    0.2085
+  Source:   18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt
+  Metadata: {'source': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt', 'doc_id': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia', 'chunk_index': 3}
+  Content Preview: METHODS AND FINDINGS Data from children living on the north coast of Papua New Guinea who had participated in a case-control study of the protection afforded by alpha(+)-thalassaemia against severe malaria were reanalysed to assess the genotype-specific reduction in erythrocyte count and Hb levels a...
+
+
+QUERY 5: A deficiency of vitamin B12 increases blood levels of homocysteine.
+....................
+  [RESULT 1]
+  Score:    0.3283
+  Source:   13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt
+  Metadata: {'source': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt', 'doc_id': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve', 'chunk_index': 7}
+  Content Preview: CONCLUSIONS This study corroborates previous studies and suggests a high prevalence of infection with abnormal PrP, indicating vCJD carrier status in the population compared with the 177 vCJD cases to date. These findings have important implications for the management of blood and blood products and...
+
+  [RESULT 2]
+  Score:    0.1873
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 4}
+  Content Preview: MAIN OUTCOME MEASURES Linear mixed-effects modeling was used to estimate prevalence rates and numbers of underweight children by region in 1990 and 2015 and to calculate the changes (ie, increase or decrease) to these values between 1990 and 2015.
+
+  [RESULT 3]
+  Score:    0.1830
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 3}
+  Content Preview: We propose as an alternative explanation that variants much less common than the associated one may create "synthetic associations" by occurring, stochastically, more often in association with one of the alleles at the common site versus the other allele.
+
+
+QUERY 6: A high microerythrocyte count raises vulnerability to severe anemia in homozygous alpha (+)- thalassemia trait subjects.
+....................
+  [RESULT 1]
+  Score:    0.3301
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 5}
+  Content Preview: RESULTS Worldwide, underweight prevalence was projected to decline from 26.5% in 1990 to 17.6% in 2015, a change of -34% (95% confidence interval [CI], -43% to -23%). In developed countries, the prevalence was estimated to decrease from 1.6% to 0.9%, a change of -41% (95% CI, -92% to 343%).
+
+  [RESULT 2]
+  Score:    0.3121
+  Source:   45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome..txt
+  Metadata: {'source': '45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome..txt', 'doc_id': '45638119_ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.', 'chunk_index': 2}
+  Content Preview: These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating t...
+
+  [RESULT 3]
+  Score:    0.3070
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 5}
+  Content Preview: We show that they are not only possible, but inevitable, and that under simple but reasonable genetic models, they are likely to account for or contribute to many of the recently identified signals reported in genome-wide association studies.
+
+
+QUERY 7: A total of 1,000 people in the UK are asymptomatic carriers of vCJD infection.
+....................
+  [RESULT 1]
+  Score:    0.2424
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 8}
+  Content Preview: CONCLUSIONS An overall improvement in the global situation is anticipated; however, neither the world as a whole, nor the developing regions, are expected to achieve the Millennium Development goals. This is largely due to the deteriorating situation in Africa where all subregions, except Northern A...
+
+  [RESULT 2]
+  Score:    0.1904
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 2}
+  Content Preview: It is generally thought that the associated markers reflect the effect of a nearby common (minor allele frequency >0.05) causal site, which is associated with the marker, leading to extensive resequencing efforts to find causal sites.
+
+  [RESULT 3]
+  Score:    0.1534
+  Source:   13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt
+  Metadata: {'source': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt', 'doc_id': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve', 'chunk_index': 6}
+  Content Preview: Genetic testing of the positive specimens for the genotype at PRNP codon 129 revealed a high proportion that were valine homozygous compared with the frequency in the normal population, and in stark contrast with confirmed clinical cases of vCJD, all of which were methionine homozygous at PRNP codon...
+
+
+QUERY 8: ADAR1 binds to Dicer to cleave pre-miRNA.
+....................
+  [RESULT 1]
+  Score:    0.3595
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 2}
+  Content Preview: DESIGN, SETTING, AND PARTICIPANTS Time series study of prevalence of underweight, defined as weight 2 SDs below the mean weight for age of the National Center for Health Statistics and World Health Organization (WHO) reference population.
+
+  [RESULT 2]
+  Score:    0.2055
+  Source:   18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt
+  Metadata: {'source': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt', 'doc_id': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia', 'chunk_index': 6}
+  Content Preview: In addition, children homozygous for alpha(+)-thalassaemia require a 10% greater reduction in erythrocyte count than children of normal genotype (p = 0.02) for Hb concentration to fall to 50 g/l, the cutoff for SMA.
+
+  [RESULT 3]
+  Score:    0.2050
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 3}
+  Content Preview: We propose as an alternative explanation that variants much less common than the associated one may create "synthetic associations" by occurring, stochastically, more often in association with one of the alleles at the common site versus the other allele.
+
+
+QUERY 9: AIRE is expressed in some skin tumors.
+....................
+  [RESULT 1]
+  Score:    0.2162
+  Source:   18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt
+  Metadata: {'source': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia.txt', 'doc_id': '18174210_Increased Microerythrocyte Count in Homozygous α+-Thalassaemia Contributes to Protection against Severe Malarial Anaemia', 'chunk_index': 4}
+  Content Preview: We observed a reduction in median erythrocyte count of approximately 1.5 x 10(12)/l in all children with acute falciparum malaria relative to values in community children (p < 0.001). We developed a simple mathematical model of the linear relationship between Hb concentration and erythrocyte count.
+
+  [RESULT 2]
+  Score:    0.2159
+  Source:   13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt
+  Metadata: {'source': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve.txt', 'doc_id': '13734012_Prevalent abnormal prion protein in human appendixes after bovine spongiform encephalopathy epizootic_ large scale surve', 'chunk_index': 1}
+  Content Preview: OBJECTIVES To carry out a further survey of archived appendix samples to understand better the differences between existing estimates of the prevalence of subclinical infection with prions after the bovine spongiform encephalopathy epizootic and to see whether a broader birth cohort was affected, an...
+
+  [RESULT 3]
+  Score:    0.2062
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 7}
+  Content Preview: In conclusion, uncommon or rare genetic variants can easily create synthetic associations that are credited to common variants, and this possibility requires careful consideration in the interpretation and follow up of GWAS signals.
+
+
+QUERY 10: ALDH1 expression is associated with better breast cancer outcomes.
+....................
+  [RESULT 1]
+  Score:    0.3199
+  Source:   1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt
+  Metadata: {'source': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015..txt', 'doc_id': '1606628_Estimates of global prevalence of childhood underweight in 1990 and 2015.', 'chunk_index': 4}
+  Content Preview: MAIN OUTCOME MEASURES Linear mixed-effects modeling was used to estimate prevalence rates and numbers of underweight children by region in 1990 and 2015 and to calculate the changes (ie, increase or decrease) to these values between 1990 and 2015.
+
+  [RESULT 2]
+  Score:    0.3039
+  Source:   14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt
+  Metadata: {'source': '14717500_Rare Variants Create Synthetic Genome-Wide Associations.txt', 'doc_id': '14717500_Rare Variants Create Synthetic Genome-Wide Associations', 'chunk_index': 1}
+  Content Preview: Genome-wide association studies (GWAS) have now identified at least 2,000 common variants that appear associated with common diseases or related traits (http://www.genome.gov/gwastudies), hundreds of which have been convincingly replicated.
+
+  [RESULT 3]
+  Score:    0.3030
+  Source:   31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells..txt
+  Metadata: {'source': '31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells..txt', 'doc_id': '31715818_New opportunities_ the use of nanotechnologies to manipulate and track stem cells.', 'chunk_index': 2}
+  Content Preview: Examples include magnetic nanoparticles and quantum dots for stem cell labeling and in vivo tracking; nanoparticles, carbon nanotubes, and polyplexes for the intracellular delivery of genes/oligonucleotides and protein/peptides; and engineered nanometer-scale scaffolds for stem cell differentiation ...
+

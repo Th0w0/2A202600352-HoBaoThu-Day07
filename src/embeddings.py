@@ -1,5 +1,4 @@
 from __future__ import annotations
-from openai import OpenAI
 
 import hashlib
 import math
@@ -31,13 +30,8 @@ class LocalEmbedder:
     """Sentence Transformers-backed local embedder."""
 
     def __init__(self, model_name: str = LOCAL_EMBEDDING_MODEL) -> None:
-        try:
-            from sentence_transformers import SentenceTransformer
-        except ImportError:
-            raise ImportError(
-                "sentence-transformers is not installed. "
-                "Please use MockEmbedder or OpenAIEmbedder instead."
-            )
+        from sentence_transformers import SentenceTransformer
+
         self.model_name = model_name
         self._backend_name = model_name
         self.model = SentenceTransformer(model_name)
@@ -53,6 +47,7 @@ class OpenAIEmbedder:
     """OpenAI embeddings API-backed embedder."""
 
     def __init__(self, model_name: str = OPENAI_EMBEDDING_MODEL) -> None:
+        from openai import OpenAI
 
         self.model_name = model_name
         self._backend_name = model_name

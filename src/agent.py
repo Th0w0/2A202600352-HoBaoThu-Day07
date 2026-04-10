@@ -14,13 +14,23 @@ class KnowledgeBaseAgent:
     """
 
     def __init__(self, store: EmbeddingStore, llm_fn: Callable[[str], str]) -> None:
-        # TODO: store references to store and llm_fn
         self.store = store
         self.llm_fn = llm_fn
 
     def answer(self, question: str, top_k: int = 3) -> str:
-        # TODO: retrieve chunks, build prompt, call llm_fn
-        chunks = self.store.search(question, top_k=top_k)
-        context = "\n\n".join([chunk["content"] for chunk in chunks])
-        prompt = f"Context:\n{context}\n\nQuestion:\n{question}\n\nAnswer:"
+        # 1. Retrieve top-k relevant chunks
+        results = self.store.search(question, top_k=top_k)
+        
+        # 2. Build prompt with context
+        context = "\n\n".join([r["content"] for r in results])
+        prompt = f"""You are a helpful assistant. Use the following context to answer the question at the end.
+If you don't know the answer, just say you don't know, don't try to make up an answer.
+
+Context:
+{context}
+
+Question: {question}
+Answer:"""
+        
+        # 3. Call LLM
         return self.llm_fn(prompt)
