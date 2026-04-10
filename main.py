@@ -27,7 +27,7 @@ from src.store import EmbeddingStore
 #     "data/vi_retrieval_notes.md",
 # ]
 
-DATA_DIR = "data_nhom"
+DATA_DIR = "sampledata"
 
 SAMPLE_FILES = [
     str(p)
@@ -106,7 +106,7 @@ def make_gemini_embedder():
 
     def _embed(text: str) -> list[float]:
         result = client.models.embed_content(
-            model="models/text-embedding-004",
+            model="text-embedding-004",
             contents=text,
         )
         return result.embeddings[0].values
@@ -120,11 +120,7 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
     query = question or "Summarize the key information from the loaded files."
 
     print("=== Manual File Test ===")
-    print("Accepted file types: .md, .txt")
-    print("Input file list:")
-    for file_path in files:
-        print(f"  - {file_path}")
-
+ 
     docs = load_documents_from_files(files)
     if not docs:
         print("\nNo valid input files were loaded.")
